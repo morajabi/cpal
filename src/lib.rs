@@ -408,7 +408,7 @@ impl StreamInstant {
             .and_then(Self::from_nanos_i128)
     }
 
-    fn as_nanos(&self) -> i128 {
+    pub fn as_nanos(&self) -> i128 {
         (self.secs as i128 * 1_000_000_000) + self.nanos as i128
     }
 
@@ -438,7 +438,7 @@ impl StreamInstant {
         Self::new(s, ns)
     }
 
-    fn new(secs: i64, nanos: u32) -> Self {
+    pub fn new(secs: i64, nanos: u32) -> Self {
         StreamInstant { secs, nanos }
     }
 }
